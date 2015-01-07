@@ -1,6 +1,6 @@
 ## -*- docker-image-name: "banno/hbase-standalone" -*-
-FROM ubuntu:12.04
-MAINTAINER Nic Grayson nic.grayson@banno.com
+FROM ubuntu
+MAINTAINER antonio@tradingeconomics.com
 
 # install add-apt-repository
 RUN \
@@ -17,8 +17,7 @@ RUN \
 
 # install hbase master
 RUN mkdir /opt/hbase
-RUN wget -q https://github.com/Banno/docker-hbase-standalone/raw/master/hbase-0.94.15-cdh4.7.0.tar.gz -O /opt/hbase/hbase-0.94.15-cdh4.7.0.tar.gz
-RUN cd /opt/hbase && tar xfvz hbase-0.94.15-cdh4.7.0.tar.gz
+RUN wget -q http://mirrors.fe.up.pt/pub/apache/hbase/stable/hbase-0.98.9-hadoop2-bin.tar.gz | tar xfvz -C /opt/hbase
 ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
 
 # need this for hbase to run
@@ -35,4 +34,4 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-CMD /opt/hbase/hbase-0.94.15-cdh4.7.0/bin/hbase master start
+CMD /opt/hbase/bin/hbase master start
