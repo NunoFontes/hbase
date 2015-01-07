@@ -36,5 +36,6 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-CMD /bin/bash
+
 #CMD /opt/hbase/bin/start-hbase.sh
+CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
