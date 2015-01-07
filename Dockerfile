@@ -1,8 +1,9 @@
 ## hbase standalone
-FROM ubuntu:12.04
+FROM ubuntu
 MAINTAINER antonio@tradingeconomics.com
 
-# install add-apt-repository
+# install requirements
+ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get install -y python-software-properties curl
