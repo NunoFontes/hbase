@@ -17,7 +17,7 @@ RUN \
 
 # install hbase master
 RUN mkdir /opt/hbase
-RUN wget -q http://mirrors.fe.up.pt/pub/apache/hbase/stable/hbase-0.98.9-hadoop2-bin.tar.gz | tar xfvz -C /opt/hbase
+RUN curl -SL http://apache.org/dist/hbase/hbase-0.98.9/hbase-0.98.9.tar.gz | tar xvz -C /opt/hbase
 # ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
 
 # need this for hbase to run
@@ -34,4 +34,4 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-CMD /opt/hbase/bin/hbase master start
+CMD /opt/hbase/bin/start-hbase.sh
