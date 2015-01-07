@@ -1,5 +1,5 @@
-## -*- docker-image-name: "banno/hbase-standalone" -*-
-FROM ubuntu
+## hbase standalone
+FROM ubuntu:12.04
 MAINTAINER antonio@tradingeconomics.com
 
 # install add-apt-repository
