@@ -15,7 +15,7 @@ RUN \
   apt-get update && \
   apt-get install -y oracle-java7-installer
 
-# install hbase master
+# install hbase
 RUN mkdir /opt/hbase
 RUN curl -SL http://apache.org/dist/hbase/hbase-0.98.9/hbase-0.98.9.tar.gz | tar xvz -C /opt/hbase
 # ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
