@@ -18,7 +18,7 @@ RUN \
 # install hbase master
 RUN mkdir /opt/hbase
 RUN wget -q http://mirrors.fe.up.pt/pub/apache/hbase/stable/hbase-0.98.9-hadoop2-bin.tar.gz | tar xfvz -C /opt/hbase
-ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
+# ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
 
 # need this for hbase to run
 ENV JAVA_HOME /usr
