@@ -38,4 +38,6 @@ EXPOSE 60030
 
 
 #CMD /opt/hbase/bin/start-hbase.sh
+RUN cd /opt/hbase
+RUN ls
 CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
