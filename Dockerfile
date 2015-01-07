@@ -17,8 +17,9 @@ RUN \
   apt-get install -y oracle-java7-installer
 
 # install hbase
-RUN mkdir /opt/hbase
-RUN curl http://apache.org/dist/hbase/hbase-0.98.9/hbase-0.98.9-hadoop2-bin.tar.gz | tar xvz -C /opt/hbase
+RUN mkdir /opt/hbase && \ 
+    curl http://apache.org/dist/hbase/hbase-0.98.9/hbase-0.98.9-hadoop2-bin.tar.gz | tar xvz && \
+    mv hbase-0.98.9-hadoop2-bin /opt/hbase
 
 # ADD hbase-site.xml /etc/hbase/conf/hbase-site.xml
 
@@ -36,8 +37,4 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-
-#CMD /opt/hbase/bin/start-hbase.sh
-RUN cd /opt/hbase
-RUN ls
-CMD /bin/sh -c "while true; do echo hello world; sleep 1; done"
+CMD /opt/hbase/bin/start-hbase.sh
