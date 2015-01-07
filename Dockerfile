@@ -36,4 +36,5 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
+CMD /bin/bash
 #CMD /opt/hbase/bin/start-hbase.sh
