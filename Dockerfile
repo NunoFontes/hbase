@@ -38,7 +38,7 @@ EXPOSE 60020
 EXPOSE 60030
 
 # Add HBASE to path
-env PATH /opt/hbase/bin:$PATH
+ENV PATH /opt/hbase/bin:$PATH
 
 # Launch HBASE on Container Start
 CMD ["hbase", "master", "start"]
