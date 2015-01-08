@@ -9,3 +9,10 @@ sudo docker run -d -h hbase --name hbase -p 2181:2181 -p 60000:60000 -p 60010:60
 sudo docker exec -i -t hbase bash
 
 
+# Creating OpenTSDB Tables 
+
+export HBASE_HOME=/opt/hbase
+
+export COMPRESSION=NONE
+
+curl -s https://raw.githubusercontent.com/OpenTSDB/opentsdb/master/src/create_table.sh | bash
