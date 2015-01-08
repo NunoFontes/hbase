@@ -37,6 +37,12 @@ EXPOSE 60020
 # HBase Regionserver web UI
 EXPOSE 60030
 
-CMD ["/opt/hbase/bin/hbase", "master", "start"]
+# Add HBASE to path
+env PATH /opt/hbase/bin:$PATH
+
+# Launch HBASE on Container Start
+CMD ["hbase", "master", "start"]
+
+#CMD ["/opt/hbase/bin/hbase", "master", "start"]
 # CMD ["/bin/sh", "/opt/hbase/bin/start-hbase.sh"]
 
