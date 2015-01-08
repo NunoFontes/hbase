@@ -46,3 +46,8 @@ CMD ["hbase", "master", "start"]
 #CMD ["/opt/hbase/bin/hbase", "master", "start"]
 # CMD ["/bin/sh", "/opt/hbase/bin/start-hbase.sh"]
 
+# Creating OpenTSDB Tables 
+ENV HBASE_HOME /opt/hbase
+ENV COMPRESSION NONE
+RUN curl -s https://raw.githubusercontent.com/OpenTSDB/opentsdb/master/src/create_table.sh | bash
+
