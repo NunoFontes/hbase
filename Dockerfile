@@ -40,8 +40,9 @@ EXPOSE 60030
 # Add HBASE to path
 ENV PATH /opt/hbase/bin:$PATH
 
-ADD ./start.sh /start.sh
-["/bin/bash", "/start.sh"]
+COPY start.sh start.sh
+CMD ["/bin/bash", "start.sh"]
+
 
 # Launch HBASE on Container Start
 # CMD ["hbase", "master", "start"]
